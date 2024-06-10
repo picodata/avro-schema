@@ -1185,7 +1185,8 @@ Default value defined in source schema but missing in target schema]])
             end
         end
         for o, field in ipairs(to.fields) do
-            if field.default == nil and not o2i[o] then
+            local nullable = type(field.type) == "table" and field.type.nullable
+            if field.default == nil and not o2i[o] and not nullable then
                 mem[to] = nil;
                 context.stack.set_ptrfrom(nil)
                 context.stack.set_ptrto(nil)
