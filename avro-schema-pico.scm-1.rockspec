@@ -1,5 +1,5 @@
 package = "avro-schema"
-version = "scm-1"
+version = "pico.scm-1"
 source = {
 	url = "git+https://github.com/picodata/avro-schema",
 	branch = "master",
